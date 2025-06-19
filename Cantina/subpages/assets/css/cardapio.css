@@ -5,17 +5,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --cor-primaria: #ff4d69;
-    --cor-titulo: #ffa100;
+    --cor-primaria: rgb(231, 231, 231);
+    --cor-secundaria: #ff4d69;
+    --cor-titulo-principal: #000000;
+    --cor-titulo-secundaria: #ffa100;
     --cor--botao-accept: #93c293;
     --cor--botao-reject: #dd3e56;
+    --cor-elementos-navbar: red;
     --font-titulo: 'Poppins', sans-serif;
 }
 
-body {
+*{
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
 }
 
 /*Header - Navbar*/
@@ -23,10 +25,12 @@ body {
 .navbar{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
-    height: 6vh;
-    background-color:  var(--cor-primaria);
+    height: 8vh;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid #ccc;
+
 }
 
 /*Btn "minha conta" */
@@ -54,7 +58,34 @@ body {
 
 .btn-nav-account i {
     font-size: 2rem;
-    color: #ffffff;
+    color: var(--cor-elementos-navbar);
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 6vh;
+}
+
+.nav-links ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20vh;
+    padding-right: 4%;
+}
+
+.nav-links ul h1{
+    color: var(--cor-elementos-navbar);
+    font-family: var(--font-titulo);
+    cursor: pointer;
+}
+
+.nav-links ul i{
+    font-size: 1rem;
 }
 
 /*pop up*/
@@ -108,39 +139,150 @@ body {
     cursor: pointer;
 }
 
-/* "Restante da navbar" */
+/*Main*/
 
-.nav-links{
+.container-banner{
+    display: flex;
+    justify-content: center ;
+    align-items: flex-end;
+    height: 38vh;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.content-banner{
+    height: 30vh;
+    width: 80%;
+    background-color: #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-destaques{
+    display: flex;
+    justify-content: center ;
+    flex-direction: column;
+    align-items: center;
+    height: 55vh;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.titulo-destaques{
+    width: 80%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.titulo-destaques h1{
+    color: black;
+    font-family: var(--font-titulo);
+    font-size: 1.2rem;
+}
+
+.content-destaques{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40vh;
+    width: 80%;
+    background-color: #ffffff;
+}
+
+.items-destaques{
+    width: 30%;
+    background-color: #ffffff;
+    height: 100%;
+    border-radius: 2vh;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-img{
+    height: 40%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: rgb(158, 158, 158);
+}
+
+.card-img img{
+    height: 80%;
+    width: 60%;
+    overflow: hidden;
+    border: 0px solid;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: rgb(231, 231, 231);
+}
+
+.card-text{
+    height: 12%;
     width: 100%;
-    height: 6vh;
+    font-family: var(--font-titulo);
+    text-align: center;
 }
 
-.nav-links ul{
-    display: flex;
-    list-style: none;
-    padding: 0;
+.card-text h5{
+    height: 100%;
+    font-weight: 500;
     margin: 0;
-    gap: 20vh;
-    padding-right: 8vw;
+    padding: 0;
+    font-size: 1.2rem;
 }
 
-.nav-links ul h1{
-    color: white;
+.card-text-description{
+    height: 22%;
+    width: 100%;
+    font-family: var(--font-titulo);
+    display: flex;
+    justify-content: center;
+}
+
+.card-text-description p{
+    height: 100%;
+    max-width: 60%;
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+.card-preco{
+    width: 100%;
+    height: 10%;
+}
+
+.card-preco h6{
+    width: 98%;
+    height: 100%;
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+    padding-left: 2%;
     font-family: var(--font-titulo);
 }
 
-.nav-links ul i{
-    font-size: 1rem;
+.card-btn-add{
+    width: 100%;
+    height: 16%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
-
-.btn-nav-1, .btn-nav-2, .btn-nav-3{
+.card-btn-add button{
+    width: 40%;
+    height: 60%;
+    background-color: var(--cor-secundaria);
     border: none;
-    height: 2.5vh;
-    width: 1.5vw;
-    border-radius: 1.8vh;
+    border-radius: 2vh;
+    color: rgb(255, 255, 255);
+    font-family: var(--font-titulo);
+    font-size: 1.2rem;
+    cursor: pointer;
 }
+
+.section{
+    height: 40vh;
+    width: 100%;
+}
+
+
